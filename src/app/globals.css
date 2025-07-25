@@ -20,7 +20,36 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(to bottom, #191970 0%, #10102A 100%);
+  color: white;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.2; }
+}
+
+.starfield {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* ❗ only cover hero area */
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+.star {
+  position: absolute;
+  background: white;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  animation: twinkle 2s infinite ease-in-out;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.8); /* glow */
+  filter: blur(0.3px); /* subtle blur */
+}
+
+html {
+  scroll-behavior: smooth;
 }
