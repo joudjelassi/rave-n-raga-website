@@ -33,7 +33,7 @@ export default function Home() {
     },
   ];
   const galleryImages = [
-    '/gallery/1.jpg',
+    '/gallery/1.JPG',
     '/gallery/2.jpg',
     '/gallery/3.jpg',
   ];
