@@ -33,11 +33,11 @@ export default function Home() {
     },
   ];
   const galleryImages = [
-    '/gallery/1.JPG',
-    '/gallery/2.jpg',
-    '/gallery/3.jpg',
-    '/gallery/4.jpg',
-    '/gallery/5.jpg',
+    {src: '/gallery/1.JPG', credit: null },
+    {src: '/gallery/2.jpg', credit: null },
+    {src: '/gallery/3.jpg', credit: null },
+    {src: '/gallery/4.jpg', credit: "@truenorth_shots" },
+    {src: '/gallery/5.jpg', credit: "@truenorth_shots" },
   ];
   const sliderSettings = {
     dots: true,
@@ -200,15 +200,20 @@ export default function Home() {
   <div className="max-w-6xl mx-auto text-center">
     <h2 className="text-3xl md:text-4xl font-bold mb-14">Gallery</h2>
     <Slider {...sliderSettings}>
-      {galleryImages.map((src, idx) => (
-        <div key={idx} className="px-3">
+      {galleryImages.map((img, idx) => (
+        <div key={idx} className="px-3 relative">
           <div className="overflow-hidden rounded-xl shadow-lg">
             <img
-              src={src}
+              src={img.src}
               alt={`Gallery ${idx + 1}`}
               className="w-full h-80 object-cover cursor-pointer"
-              onClick={() => setLightboxImage(src)}
+              onClick={() => setLightboxImage(img.src)}
             />
+            {img.credit && (
+              <div className="absolute bottom-2 right-2 bg-black bg-opacity-60 text-white text-xs px-2 py-1 rounded">
+                📸 {img.credit}
+              </div>
+            )}
           </div>
         </div>
       ))}
