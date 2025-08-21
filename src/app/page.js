@@ -36,6 +36,8 @@ export default function Home() {
     '/gallery/1.JPG',
     '/gallery/2.jpg',
     '/gallery/3.jpg',
+    '/gallery/4.jpg',
+    '/gallery/5.jpg',
   ];
   const sliderSettings = {
     dots: true,
