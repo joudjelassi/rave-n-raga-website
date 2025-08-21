@@ -1,4 +1,7 @@
 'use client';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Slider from 'react-slick';
 import { MusicalNoteIcon } from '@heroicons/react/24/solid';
 import { motion } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
@@ -22,26 +25,56 @@ export default function Home() {
   }, []);
   const sampleEvents = [
     {
-      title: 'Neon Pulse',
-      date: 'August 31, 2025',
-      location: 'Kelowna Warehouse',
-      description: 'A night of hypnotic beats, lasers, and bass drops. Kick off the vibe with a bang.',
-    },
-    {
-      title: 'Ambient Flow',
-      date: 'September 14, 2025',
-      location: 'Downtown Rooftop',
-      description: 'Chill ambient grooves under the stars with a view of the city skyline.',
-    },
-    {
-      title: 'Bass Ritual',
-      date: 'October 5, 2025',
-      location: 'Underground Hall',
-      description: 'Dark techno and bass-heavy sets. Enter the ritual zone.',
+      title: 'Social Nights',
+      date: 'Every Other Friday',
+      location: 'Unleashed Brewing',
+      description: 'Rotating DJs, great drinks, 15% off for students — and yes, even your dog’s invited — the ultimate Friday night starts at Unleashing Brewing Co.',
+      image: '/posters/social-nights.jpg',
     },
   ];
+  const galleryImages = [
+    '/gallery/1.jpg',
+    '/gallery/2.jpg',
+    '/gallery/3.jpg',
+  ];
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 600,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    pauseOnHover: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: { slidesToShow: 2 },
+      },
+      {
+        breakpoint: 640,
+        settings: { slidesToShow: 1 },
+      },
+    ],
+  };
+
   return (
-    <main className="relative bg-gradient-to-b from-[#050518] to-[#01010d] text-white overflow-x-hidden overflow-y-auto">
+    <>
+    <header className="fixed top-0 left-0 w-full z-50 bg-[#050518] bg-opacity-70 backdrop-blur-md text-white shadow-md">
+      <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+        <div className="flex items-center space-x-3">
+          <img src="/logo.png" alt="Rave n Raga Logo" className="h-20 w-20 object-contain" />
+          <div className="text-lg font-bold tracking-wide">Rave n Raga</div>
+        </div>
+        <nav className="flex space-x-6 text-sm uppercase font-medium">
+          <a href="#events" className="hover:text-indigo-400 transition">Events</a>
+          <a href="#about" className="hover:text-indigo-400 transition">About Us</a>
+          <a href="#gallery" className="hover:text-indigo-400 transition">Gallery</a>
+        </nav>
+      </div>
+    </header>
+
+    <main className="pt-20 relative bg-gradient-to-b from-[#050518] to-[#01010d] text-white overflow-x-hidden overflow-y-auto">
       {/* Starfield Layer */}
       <div className="starfield">
         {[...Array(200)].map((_, i) => (
@@ -74,7 +107,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="border border-white py-2 px-6 rounded-full hover:bg-white hover:text-black transition hover:shadow-[0_0_10px_white]"
             >
-              Follow on Instagram
+              Follow us on Instagram
             </a>
           </div>
         </div>
@@ -86,25 +119,22 @@ export default function Home() {
           ↓ Scroll down
         </motion.div>
       </div>
-      {/* About Section */}
-      <section className="relative z-10 py-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-        <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">About Rave n Raga</h2>
-          </div>
+      {/* About Us Section */}
+       <section id="about" className="relative z-10 py-24 px-6">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8">About Us</h2>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-lg md:text-xl text-indigo-100 leading-relaxed">
-            Rave n Raga is Kelowna’s homegrown hub for underground sound and connection.
-            Whether you're vibing to EDM drops or chilling to ambient melodies, we bring people
-            together through unforgettable music events, immersive lightshows, and a vibrant
-            local scene.
+            className="text-lg md:text-xl text-indigo-100 leading-relaxed"
+          >
+            Rave n Raga is a creative collaboration between two individuals who have called Kelowna home for the past seven years. United by a shared mission to create space for sound, soul, and connection, we bring people together through the power of music and community. From high-energy raves to soul-stirring live bands, local markets, and community pop-ups, we create experiences that celebrate self-expression, belonging, and joy. Our events feature DJs, musicians, and vendors from the local scene — because supporting our creative community is at the core of everything we do. Whether it’s a dance floor under the stars or an intimate jam session, we’re here to make every moment unforgettable. 🫶
           </motion.p>
         </div>
       </section>
+
       <section id="events" className="relative z-10 py-24 px-6">
         <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-14">Upcoming Events</h2>
@@ -112,55 +142,78 @@ export default function Home() {
             {sampleEvents.map((event, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-[#1f1f2f] to-[#121220] rounded-2xl p-6 shadow-lg hover:shadow-indigo-700/30 transition group relative overflow-hidden"
+                className="bg-[#1f1f2f] rounded-2xl overflow-hidden shadow-lg hover:shadow-indigo-700/30 transition transform hover:scale-105"
               >
-                <div className="absolute -top-6 -right-6 bg-indigo-500/20 w-24 h-24 rounded-full blur-2xl group-hover:scale-110 transition-transform duration-300"></div>
-                <div className="relative z-10 text-left">
+                {/* Event Poster */}
+                <img
+                  src={event.image}
+                  alt={`${event.title} poster`}
+                  className="w-full h-120 object-cover"
+                />
+
+                {/* Info Box */}
+                <div className="p-5 text-left flex flex-col justify-between h-full">
                   <h3 className="text-xl font-semibold text-white mb-2">{event.title}</h3>
                   <p className="text-sm text-indigo-300 mb-4">{event.description}</p>
+
+                  {/* Location */}
                   <div className="flex items-center text-sm text-[#AAAAFF] mb-2 gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 12.414a2 2 0 10-2.828 2.828l4.243 4.243a8 8 0 11-11.314-11.314 8 8 0 0111.314 11.314z" />
                     </svg>
                     <span>{event.location}</span>
                   </div>
-                  <div className="flex items-center text-sm text-[#AAAAFF] mb-6 gap-2">
+
+                  {/* Date */}
+                  <div className="flex items-center text-sm text-[#AAAAFF] mb-4 gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3M3 11h18M5 19h14a2 2 0 002-2v-7H3v7a2 2 0 002 2z" />
                     </svg>
                     <span>{event.date}</span>
                   </div>
-                  <button className="w-full mt-auto px-5 py-2 rounded-full bg-white text-black font-medium hover:bg-gray-200 transition">
-                    RSVP Coming Soon
-                  </button>
+
+                  {/* RSVP Button */}
+                  {event.ticketLink ? (
+                    <a
+                      href={event.ticketLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full block mt-auto px-5 py-2 rounded-full bg-white text-black font-medium text-center hover:bg-gray-200 transition"
+                    >
+                      Get Tickets
+                    </a>
+                  ) : (
+                    <div className="w-full mt-auto px-5 py-2 rounded-full border border-white text-white text-center font-medium opacity-80">
+                      No Cover
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
+
           </div>
         </div>
       </section>
       <section id="gallery" className="relative z-10 py-24 px-6">
   <div className="max-w-6xl mx-auto text-center">
     <h2 className="text-3xl md:text-4xl font-bold mb-14">Gallery</h2>
-    <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
-      {[1, 2, 3, 4, 5, 6].map((id) => (
-        <div key={id} className="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105">
-          <button
-            onClick={() => setLightboxImage(`https://picsum.photos/seed/rave${id}/1200/900`)}
-            className="w-full"
-          >
+    <Slider {...sliderSettings}>
+      {galleryImages.map((src, idx) => (
+        <div key={idx} className="px-3">
+          <div className="overflow-hidden rounded-xl shadow-lg">
             <img
-              src={`https://picsum.photos/seed/rave${id}/800/600`}
-              alt={`Event ${id}`}
-              className="w-full h-60 object-cover"
-              loading="lazy"
+              src={src}
+              alt={`Gallery ${idx + 1}`}
+              className="w-full h-80 object-cover cursor-pointer"
+              onClick={() => setLightboxImage(src)}
             />
-          </button>
+          </div>
         </div>
       ))}
-    </div>
+    </Slider>
   </div>
 </section>
+
       {/* Join the Community Section */}
       <section id="community" className="relative z-10 py-24 px-6">
         <div className="max-w-4xl mx-auto text-center">
@@ -181,19 +234,7 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-[#1f1f2f] to-[#121220] rounded-2xl p-6 shadow-lg hover:shadow-indigo-700/30 transition group relative overflow-hidden">
-              <div className="absolute -top-6 -right-6 bg-indigo-500/20 w-24 h-24 rounded-full blur-2xl group-hover:scale-110 transition-transform duration-300"></div>
-              <div className="relative z-10 text-left">
-                <h3 className="text-xl font-semibold mb-2 text-white">Join the WhatsApp Group</h3>
-                <p className="text-sm text-indigo-300 mb-6">Get exclusive invites, community updates, and early access to tickets.</p>
-                <a
-                  href="#"
-                  className="inline-block bg-white text-black font-medium px-5 py-2 rounded-full hover:bg-gray-200 transition"
-                >
-                  Join Now
-                </a>
-              </div>
-            </div>
+            
           </div>
         </div>
       </section>
@@ -206,41 +247,6 @@ export default function Home() {
         </div>
       )}
 
-      {/* Location / Venue Section */}
-      <section id="venue" className="relative z-10 py-24 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">Venue</h2>
-          <p className="text-lg text-indigo-100 mb-6">
-            All events are hosted at our main venue:
-          </p>
-          <h3 className="text-xl font-semibold text-white mb-2">Unleashed Brewing</h3>
-          <p className="text-md text-indigo-300 mb-6">880 Clement Ave, Kelowna, BC V1Y 7E2</p>
-          <div className="overflow-hidden rounded-lg shadow-lg">
-            <iframe
-              src="https://www.google.com/maps?q=Unleashed+Brewing,+880+Clement+Ave,+Kelowna,+BC&output=embed"
-              width="100%"
-              height="350"
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="w-full h-[350px] border-0 rounded-lg"
-            ></iframe>
-          </div>
-          {/* Venue Image Gallery */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
-            <img
-              src="https://lh5.googleusercontent.com/p/AF1QipM0JRDqNFRhSgSnz1sAyLoNe5J3Rl1kya-FYoEv=w800-h600-k-no"
-              alt="Unleashed Brewing interior"
-              className="w-full h-64 object-cover rounded-lg shadow-md"
-            />
-            <img
-              src="https://lh5.googleusercontent.com/p/AF1QipPf-vp2zRbiAdZgvJHY4vutlBvEkOWcbxruMnU3=w800-h600-k-no"
-              alt="Unleashed Brewing bar view"
-              className="w-full h-64 object-cover rounded-lg shadow-md"
-            />
-          </div>
-        </div>
-      </section>
       <footer className="relative z-10 bg-[#0d0d1a] text-white py-10 px-6 border-t border-indigo-900 mt-10">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
           <div>
@@ -266,5 +272,6 @@ export default function Home() {
         </div>
       </footer>
     </main>
+  </> 
   );
 }
