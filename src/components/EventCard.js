@@ -1,8 +1,19 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function EventCard({ event }) {
   const [showAlt, setShowAlt] = useState(false);
+
+  useEffect(() => {
+    if (!event.altImage) return;
+    const isTouchDevice = window.matchMedia('(hover: none)').matches;
+    if (!isTouchDevice) return;
+
+    const interval = setInterval(() => {
+      setShowAlt((prev) => !prev);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [event.altImage]);
 
   return (
     <div
@@ -12,10 +23,7 @@ export default function EventCard({ event }) {
     >
       {/* Event Poster */}
       {event.altImage ? (
-        <div
-          className="relative w-full h-120 cursor-pointer"
-          onClick={() => setShowAlt((prev) => !prev)}
-        >
+        <div className="relative w-full h-120">
           <img
             src={event.image}
             alt={`${event.title} poster`}
