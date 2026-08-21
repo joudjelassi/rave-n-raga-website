@@ -1,31 +1,7 @@
 'use client';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import Slider from 'react-slick';
 import { useState } from 'react';
 import { galleryImages } from '@/data/gallery';
 import { galleryEvents } from '@/data/galleryEvents';
-
-const sliderSettings = {
-  dots: true,
-  infinite: true,
-  speed: 600,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 3000,
-  pauseOnHover: true,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: { slidesToShow: 2 },
-    },
-    {
-      breakpoint: 640,
-      settings: { slidesToShow: 1 },
-    },
-  ],
-};
 
 export default function GalleryPage() {
   const [lightboxImage, setLightboxImage] = useState(null);
@@ -34,32 +10,31 @@ export default function GalleryPage() {
     <section className="relative z-10 py-24 px-6">
       <div className="max-w-6xl mx-auto text-center">
         <h1 className="font-display text-3xl md:text-4xl font-bold mb-14">Gallery</h1>
-        <Slider {...sliderSettings}>
+
+        <div className="columns-2 sm:columns-3 lg:columns-4 gap-3">
           {galleryImages.map((img, idx) => (
-            <div key={idx} className="px-3 relative">
-              <div className="overflow-hidden rounded-xl shadow-lg">
-                <img
-                  src={img.src}
-                  alt={`Gallery ${idx + 1}`}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-80 object-cover cursor-pointer"
-                  onClick={() => setLightboxImage(img.src)}
-                />
-                {(img.event || img.credit) && (
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent px-3 pt-6 pb-2 text-left">
-                    {img.event && (
-                      <p className="text-white text-xs font-medium leading-tight">{img.event}</p>
-                    )}
-                    {img.credit && (
-                      <p className="text-indigo-200 text-[11px] leading-tight">📸 {img.credit}</p>
-                    )}
-                  </div>
-                )}
-              </div>
+            <div key={idx} className="relative mb-3 break-inside-avoid rounded-xl overflow-hidden shadow-lg">
+              <img
+                src={img.src}
+                alt={`Gallery ${idx + 1}`}
+                loading="lazy"
+                decoding="async"
+                className="w-full block object-cover cursor-pointer"
+                onClick={() => setLightboxImage(img.src)}
+              />
+              {(img.event || img.credit) && (
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent px-3 pt-6 pb-2 text-left">
+                  {img.event && (
+                    <p className="text-white text-xs font-medium leading-tight">{img.event}</p>
+                  )}
+                  {img.credit && (
+                    <p className="text-indigo-200 text-[11px] leading-tight">📸 {img.credit}</p>
+                  )}
+                </div>
+              )}
             </div>
           ))}
-        </Slider>
+        </div>
 
         <h2 className="font-display text-2xl md:text-3xl font-bold mt-20 mb-8">Event Albums</h2>
         <div className="flex flex-wrap justify-center gap-4">
