@@ -41,6 +41,8 @@ export default function GalleryPage() {
                 <img
                   src={img.src}
                   alt={`Gallery ${idx + 1}`}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-80 object-cover cursor-pointer"
                   onClick={() => setLightboxImage(img.src)}
                 />

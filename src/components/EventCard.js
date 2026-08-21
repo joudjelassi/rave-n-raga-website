@@ -11,11 +11,15 @@ export default function EventCard({ event }) {
           <img
             src={event.image}
             alt={`${event.title} poster`}
+            loading="lazy"
+            decoding="async"
             className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
           />
           <img
             src={event.altImage}
             alt={`${event.title} alternate poster`}
+            loading="lazy"
+            decoding="async"
             className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
           />
         </div>
@@ -23,6 +27,8 @@ export default function EventCard({ event }) {
         <img
           src={event.image}
           alt={`${event.title} poster`}
+          loading="lazy"
+          decoding="async"
           className="w-full h-120 object-cover"
         />
       )}
