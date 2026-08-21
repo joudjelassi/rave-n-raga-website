@@ -16,7 +16,7 @@ export default function Footer() {
             Instagram
           </a>
           <a
-            href="mailto:info@ravenraga.com"
+            href="mailto:rave.n.raga.booking@gmail.com"
             className="hover:text-[var(--color-accent)] transition"
           >
             Contact
