@@ -5,8 +5,11 @@ export default function Starfield({ count = 200 }) {
   const [stars, setStars] = useState([]);
 
   useEffect(() => {
+    const isSmallScreen = window.matchMedia('(max-width: 768px)').matches;
+    const actualCount = isSmallScreen ? Math.round(count * 0.3) : count;
+
     setStars(
-      Array.from({ length: count }, () => ({
+      Array.from({ length: actualCount }, () => ({
         top: Math.random() * 100,
         left: Math.random() * 100,
         duration: 1 + Math.random() * 2,
