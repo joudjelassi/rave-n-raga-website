@@ -39,7 +39,7 @@ export default function AboutPage() {
         <motion.div {...fadeUp} className="max-w-3xl mx-auto text-center">
           <h2 className="font-display text-2xl md:text-3xl font-bold mb-6">Our Story</h2>
           <p className="text-lg text-indigo-100 leading-relaxed mb-4">
-            Rave N Raga started as a creative collaboration between two friends who have called Kelowna home for the past seven years.
+            Rave N Raga started as a creative collaboration between the two of us, who have called Kelowna home for the past seven years.
           </p>
           <p className="text-lg text-indigo-100 leading-relaxed mb-4">
             Over the years, we’ve watched this city grow, found our own communities here, and experienced firsthand how music can bring people together. We wanted to create something that felt like a reflection of that — spaces where people could come together, discover new sounds, support local artists and makers, and simply have a good time.
