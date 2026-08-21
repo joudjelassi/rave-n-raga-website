@@ -46,9 +46,14 @@ export default function GalleryPage() {
                   className="w-full h-80 object-cover cursor-pointer"
                   onClick={() => setLightboxImage(img.src)}
                 />
-                {img.credit && (
-                  <div className="absolute bottom-2 right-2 bg-black bg-opacity-60 text-white text-xs px-2 py-1 rounded">
-                    📸 {img.credit}
+                {(img.event || img.credit) && (
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent px-3 pt-6 pb-2 text-left">
+                    {img.event && (
+                      <p className="text-white text-xs font-medium leading-tight">{img.event}</p>
+                    )}
+                    {img.credit && (
+                      <p className="text-indigo-200 text-[11px] leading-tight">📸 {img.credit}</p>
+                    )}
                   </div>
                 )}
               </div>
