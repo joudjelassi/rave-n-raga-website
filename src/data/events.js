@@ -8,14 +8,6 @@ export const upcomingEvents = [
     altImage: '/posters/rhythmroom7-alternate.png',
     ticketLink: 'https://square.link/u/WOoGJpbF?src=sheet',
   },
-  {
-    title: 'Social Nights',
-    date: 'Every Other Friday',
-    location: 'Unleashed Brewing',
-    description: 'Rotating DJs, great drinks, 15% off for students — and yes, even your dog’s invited — the ultimate Friday night starts at Unleashing Brewing Co.',
-    image: '/posters/social-nights.jpg',
-    isFreeEntry: true,
-  },
 ];
 
 export const pastEvents = [
