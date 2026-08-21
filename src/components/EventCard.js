@@ -1,7 +1,7 @@
 export default function EventCard({ event }) {
   return (
     <div
-      className={`group bg-[#1f1f2f] rounded-2xl overflow-hidden shadow-lg transition transform hover:scale-105 hover:shadow-[0_10px_40px_-10px_var(--color-accent)] ${
+      className={`group flex flex-col bg-[#1f1f2f] rounded-2xl overflow-hidden shadow-lg transition transform hover:scale-105 hover:shadow-[0_10px_40px_-10px_var(--color-accent)] ${
         event.isPast ? 'opacity-70' : ''
       }`}
     >
@@ -28,7 +28,7 @@ export default function EventCard({ event }) {
       )}
 
       {/* Info Box */}
-      <div className="p-5 text-left flex flex-col justify-between h-full">
+      <div className="p-5 text-left flex flex-col justify-between flex-1">
         <h3 className="font-display text-xl font-semibold text-white mb-4">{event.title}</h3>
 
         {/* Location */}
