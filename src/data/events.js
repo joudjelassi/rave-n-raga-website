@@ -1,5 +1,14 @@
 export const upcomingEvents = [
   {
+    title: 'Rhythm Room: Vol. 7.0 — Sands of Sound',
+    date: 'August 29th, 2026',
+    location: 'Sixteen15 Venues',
+    description: 'A desert-born night of shifting rhythms and golden dunes — Sands of Sound turns the dance floor into a mirage of sound and movement.',
+    image: '/posters/rhythmroom7.PNG',
+    altImage: '/posters/rhythmroom7-alternate.png',
+    ticketLink: 'https://square.link/u/WOoGJpbF?src=sheet',
+  },
+  {
     title: 'Social Nights',
     date: 'Every Other Friday',
     location: 'Unleashed Brewing',
@@ -11,12 +20,19 @@ export const upcomingEvents = [
 
 export const pastEvents = [
   {
+    title: 'Gallery Exhibition',
+    date: 'August 14th, 2026',
+    location: 'Unleashed Brewing',
+    image: '/posters/artnight_august.png',
+    isPast: true,
+  },
+  {
     title: 'Rhythm Room: Vol. 6.0 — Estival Solstice',
     date: 'June 20th, 2026',
     location: 'Sixteen15 Venues',
     description: 'Celebrating the height of summer with sun-soaked vibes and an all-night dance floor under the solstice sky.',
     image: '/posters/rhythmroom6.png',
-    altImage: '/posters/rhythmroom6-alternate.JPG',
+    altImage: '/posters/rhythmroom6-alternate.png',
     isPast: true,
   },
   {

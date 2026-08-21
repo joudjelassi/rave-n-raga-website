@@ -16,15 +16,20 @@ export default function EventsPage() {
         >
           Events
         </motion.h1>
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="max-w-3xl mx-auto text-lg text-indigo-100 leading-relaxed mb-20"
         >
-          Our main rave series, Rhythm Room, is a themed experience that transforms the space into full immersion, with different artists showcasing their art each volume — led by our Creative Director, Zoe Turcotte (Maldor the Visual). We also host Social Nights twice a month: one a night market featuring local vendors and DJs, the other an art-focused night with a gallery-style exhibition featuring artists of all kinds, live art, and DJs.
-        </motion.p>
+          <p className="mb-4">
+            Our main rave series, Rhythm Room, is a themed immersive experience designed to transport you into a world of music, movement, art, and energy. Each volume brings a new theme and a new world to step into.
+          </p>
+          <p>
+            We also host Social Nights twice a month: one is a night market featuring local vendors and DJs, the other is an art-focused night with a gallery-style exhibition featuring artists of all kinds, live art, and DJs.
+          </p>
+        </motion.div>
 
         <h2 className="font-display text-3xl md:text-4xl font-bold mb-14">
           Upcoming Events

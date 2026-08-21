@@ -29,8 +29,7 @@ export default function EventCard({ event }) {
 
       {/* Info Box */}
       <div className="p-5 text-left flex flex-col justify-between h-full">
-        <h3 className="font-display text-xl font-semibold text-white mb-2">{event.title}</h3>
-        {!event.isPast && <p className="text-sm text-indigo-300 mb-4">{event.description}</p>}
+        <h3 className="font-display text-xl font-semibold text-white mb-4">{event.title}</h3>
 
         {/* Location */}
         <div className="flex items-center text-sm text-[#AAAAFF] mb-2 gap-2">
