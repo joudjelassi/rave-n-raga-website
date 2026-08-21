@@ -1,13 +1,5 @@
 export const upcomingEvents = [
   {
-    title: 'Rhythm Room: Vol. 1.0',
-    date: 'Saturday, September 20th',
-    location: 'Sixteen15 Venues, 1615 Pandosy Street',
-    description: 'A night soundtracked by our rotating DJs, creating a space to dance, vibe, and let go. Come groove, wiggle, bounce, or jump around. Just do you, and let the music take care of the rest.',
-    image: '/posters/rhythmroom.png',
-    ticketLink: 'https://www.sixteen15.ca/upcoming-events',
-  },
-  {
     title: 'Social Nights',
     date: 'Every Other Friday',
     location: 'Unleashed Brewing',
@@ -18,6 +10,58 @@ export const upcomingEvents = [
 ];
 
 export const pastEvents = [
+  {
+    title: 'Rhythm Room: Vol. 6.0 — Estival Solstice',
+    date: 'June 20th, 2026',
+    location: 'Sixteen15 Venues',
+    description: 'Celebrating the height of summer with sun-soaked vibes and an all-night dance floor under the solstice sky.',
+    image: '/posters/rhythmroom6.png',
+    altImage: '/posters/rhythmroom6-alternate.JPG',
+    isPast: true,
+  },
+  {
+    title: 'Rhythm Room: Vol. 5.0 — Mystic Jungle',
+    date: 'May 23rd, 2026',
+    location: 'Sixteen15 Venues',
+    description: 'An immersive jungle-themed night of tribal rhythms, earthy visuals, and untamed energy.',
+    image: '/posters/rhythmroom5.png',
+    altImage: '/posters/rhythmroom5-alternate.png',
+    isPast: true,
+  },
+  {
+    title: 'Rhythm Room: Vol. 4.0 — Cyber Pulse',
+    date: 'April 25th, 2026',
+    location: 'Sixteen15 Venues',
+    description: 'A neon-soaked, cyberpunk-inspired night pulsing with electronic energy and futuristic visuals.',
+    image: '/posters/rhythmroom4.png',
+    altImage: '/posters/rhythmroom4-alternate.png',
+    isPast: true,
+  },
+  {
+    title: 'Rhythm Room: Vol. 3.0 — Cosmic Groove',
+    date: 'February 28th, 2026',
+    location: 'Sixteen15 Venues',
+    description: 'An interstellar night of deep grooves and cosmic visuals that sent the dance floor into orbit.',
+    image: '/posters/rhythmroom3.png',
+    altImage: '/posters/rhythmroom3-alternate.png',
+    isPast: true,
+  },
+  {
+    title: 'Rhythm Room: Vol. 2.0 — Winter Solstice',
+    date: 'December 20th, 2025',
+    location: 'Sixteen15 Venues',
+    description: 'A frostbitten dance floor lit up for the longest night of the year, with icy visuals and warm community energy.',
+    image: '/posters/rhythmroom2.png',
+    isPast: true,
+  },
+  {
+    title: 'Rhythm Room: Vol. 1.0',
+    date: 'September 20th, 2025',
+    location: 'Sixteen15 Venues',
+    description: 'Where it all began — a night of rotating DJs, dancing, and the launch of our Rhythm Room series.',
+    image: '/posters/rhythmroom1.png',
+    isPast: true,
+  },
   {
     title: 'Social Nights',
     date: 'June 2026',

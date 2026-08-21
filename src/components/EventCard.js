@@ -1,16 +1,35 @@
 export default function EventCard({ event }) {
   return (
     <div
-      className={`bg-[#1f1f2f] rounded-2xl overflow-hidden shadow-lg transition transform hover:scale-105 hover:shadow-[0_10px_40px_-10px_var(--color-accent)] ${
+      className={`group bg-[#1f1f2f] rounded-2xl overflow-hidden shadow-lg transition transform hover:scale-105 hover:shadow-[0_10px_40px_-10px_var(--color-accent)] ${
         event.isPast ? 'opacity-70' : ''
       }`}
     >
       {/* Event Poster */}
-      <img
-        src={event.image}
-        alt={`${event.title} poster`}
-        className={`w-full h-120 object-cover ${event.isPast ? 'grayscale' : ''}`}
-      />
+      {event.altImage ? (
+        <div className="relative w-full h-120">
+          <img
+            src={event.image}
+            alt={`${event.title} poster`}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+              event.isPast ? 'grayscale' : ''
+            }`}
+          />
+          <img
+            src={event.altImage}
+            alt={`${event.title} alternate poster`}
+            className={`absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
+              event.isPast ? 'grayscale' : ''
+            }`}
+          />
+        </div>
+      ) : (
+        <img
+          src={event.image}
+          alt={`${event.title} poster`}
+          className={`w-full h-120 object-cover ${event.isPast ? 'grayscale' : ''}`}
+        />
+      )}
 
       {/* Info Box */}
       <div className="p-5 text-left flex flex-col justify-between h-full">

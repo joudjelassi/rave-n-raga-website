@@ -1,4 +1,9 @@
 export const galleryEvents = [
+  { title: 'Rhythm Room: Vol. 6.0 — Estival Solstice', dropboxUrl: null },
+  { title: 'Rhythm Room: Vol. 5.0 — Mystic Jungle', dropboxUrl: null },
+  { title: 'Rhythm Room: Vol. 4.0 — Cyber Pulse', dropboxUrl: null },
+  { title: 'Rhythm Room: Vol. 3.0 — Cosmic Groove', dropboxUrl: null },
+  { title: 'Rhythm Room: Vol. 2.0 — Winter Solstice', dropboxUrl: null },
   { title: 'Rhythm Room: Vol. 1.0', dropboxUrl: null },
   { title: 'Social Nights', dropboxUrl: null },
 ];
