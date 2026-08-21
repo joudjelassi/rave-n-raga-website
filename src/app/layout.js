@@ -14,7 +14,7 @@ const manrope = Manrope({
 });
 
 export const metadata = {
-  title: "Rave n Raga",
+  title: "Rave N Raga",
   description: "Creating space for sound, soul & connection — raves, bands & community events in Kelowna, BC.",
 };
 

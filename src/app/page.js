@@ -23,7 +23,7 @@ export default function Home() {
         >
           <h2 className="font-display text-3xl md:text-4xl font-bold mb-6">Who We Are</h2>
           <p className="text-lg text-indigo-100 leading-relaxed mb-6">
-            Rave n Raga is a creative collaboration bringing people together through the power of music and community — from high-energy raves to soul-stirring live bands and local pop-ups in Kelowna.
+            Rave N Raga is a creative collaboration bringing people together through the power of music and community — from high-energy raves to soul-stirring live bands and local pop-ups in Kelowna.
           </p>
           <Link
             href="/about"

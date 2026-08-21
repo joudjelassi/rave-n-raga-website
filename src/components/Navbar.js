@@ -5,9 +5,9 @@ import { useState } from 'react';
 
 const NAV_LINKS = [
   { href: '/', label: 'Home' },
+  { href: '/about', label: 'About Us' },
   { href: '/events', label: 'Events' },
   { href: '/gallery', label: 'Gallery' },
-  { href: '/about', label: 'About' },
 ];
 
 export default function Navbar() {
@@ -18,8 +18,8 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 w-full z-50 bg-[#050518] bg-opacity-70 backdrop-blur-md text-white shadow-md">
       <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center space-x-3" onClick={() => setIsOpen(false)}>
-          <img src="/logo.png" alt="Rave n Raga Logo" className="h-16 w-16 object-contain" />
-          <div className="font-display text-lg font-bold tracking-wide">Rave n Raga</div>
+          <img src="/logo.png" alt="Rave N Raga Logo" className="h-16 w-16 object-contain" />
+          <div className="font-display text-lg font-bold tracking-wide">Rave N Raga</div>
         </Link>
 
         <nav className="hidden md:flex space-x-6 text-sm uppercase font-medium">
