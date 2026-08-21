@@ -14,8 +14,20 @@ const manrope = Manrope({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://rave-n-raga-website.vercel.app"),
   title: "Rave N Raga",
-  description: "Creating space for sound, soul & connection — raves, bands & community events in Kelowna, BC.",
+  description: "Creating space for sound, soul & connection",
+  openGraph: {
+    title: "Rave N Raga",
+    description: "Creating space for sound, soul & connection",
+    images: ["/logo.png"],
+  },
+  twitter: {
+    card: "summary",
+    title: "Rave N Raga",
+    description: "Creating space for sound, soul & connection",
+    images: ["/logo.png"],
+  },
 };
 
 export default function RootLayout({ children }) {
