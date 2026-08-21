@@ -63,7 +63,7 @@ export default function GalleryPage() {
                 href={event.dropboxUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-2 rounded-full bg-[var(--color-accent)] text-[#1a0512] font-semibold hover:brightness-110 transition"
+                className="px-6 py-2 rounded-full bg-[var(--color-accent)] text-white font-semibold hover:brightness-110 transition"
               >
                 {event.title}
               </a>

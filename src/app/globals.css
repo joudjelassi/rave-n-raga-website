@@ -3,7 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --color-accent: #f0359e;
+  --color-accent: #842990;
 }
 
 @theme inline {
@@ -28,9 +28,9 @@ body {
   font-family: var(--font-display), serif;
 }
 
-@keyframes eq-pulse {
-  0%, 100% { transform: scaleY(0.35); }
-  50% { transform: scaleY(1); }
+@keyframes mandala-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 @keyframes twinkle {

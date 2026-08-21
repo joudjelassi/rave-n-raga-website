@@ -44,11 +44,10 @@ export default function Hero() {
         >
           <h1 className="font-display text-4xl md:text-6xl font-extrabold mb-4">Rave N Raga</h1>
           <p className="text-lg md:text-2xl mb-6 text-white">
-            Creating space for sound, soul & connection 🎶<br />
-            Raves, bands & everything in between in Kelowna.
+            Creating space for sound, soul & connection
           </p>
           <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-            <Link href="/events" className="bg-[var(--color-accent)] text-[#1a0512] font-semibold py-2 px-6 rounded-full hover:brightness-110 transition">
+            <Link href="/events" className="bg-[var(--color-accent)] text-white font-semibold py-2 px-6 rounded-full hover:brightness-110 transition">
               View Events
             </Link>
             <a

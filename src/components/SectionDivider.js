@@ -1,19 +1,33 @@
-const BAR_DELAYS = [0, 0.15, 0.3, 0.15, 0];
+const RING_DOTS = Array.from({ length: 8 });
 
 export default function SectionDivider() {
   return (
-    <div className="flex items-center justify-center gap-4 my-4" aria-hidden="true">
-      <span className="h-px w-16 md:w-32 bg-gradient-to-r from-transparent to-[var(--color-accent)]/50" />
-      <div className="flex items-end gap-1 h-6">
-        {BAR_DELAYS.map((delay, i) => (
-          <span
-            key={i}
-            className="w-1.5 h-full rounded-full bg-[var(--color-accent)] origin-bottom"
-            style={{ animation: 'eq-pulse 1.1s ease-in-out infinite', animationDelay: `${delay}s` }}
-          />
-        ))}
-      </div>
-      <span className="h-px w-16 md:w-32 bg-gradient-to-l from-transparent to-[var(--color-accent)]/50" />
+    <div className="flex justify-center my-8" aria-hidden="true">
+      <svg
+        width="56"
+        height="56"
+        viewBox="0 0 56 56"
+        style={{ animation: 'mandala-spin 50s linear infinite', transformOrigin: '50% 50%' }}
+      >
+        <circle cx="28" cy="28" r="3" fill="var(--color-accent)" />
+        {RING_DOTS.map((_, i) => {
+          const angle = (i / RING_DOTS.length) * 2 * Math.PI;
+          const radius = 18;
+          const cx = 28 + radius * Math.cos(angle);
+          const cy = 28 + radius * Math.sin(angle);
+          const isMajor = i % 2 === 0;
+          return (
+            <circle
+              key={i}
+              cx={cx}
+              cy={cy}
+              r={isMajor ? 2.5 : 1.5}
+              fill="var(--color-accent)"
+              opacity={isMajor ? 0.9 : 0.5}
+            />
+          );
+        })}
+      </svg>
     </div>
   );
 }
