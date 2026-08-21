@@ -3,7 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --color-accent: #e8a94a;
+  --color-accent: #f0359e;
 }
 
 @theme inline {
@@ -26,6 +26,11 @@ body {
 
 .font-display {
   font-family: var(--font-display), serif;
+}
+
+@keyframes eq-pulse {
+  0%, 100% { transform: scaleY(0.35); }
+  50% { transform: scaleY(1); }
 }
 
 @keyframes twinkle {

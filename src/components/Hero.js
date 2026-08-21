@@ -48,7 +48,7 @@ export default function Hero() {
             Raves, bands & everything in between in Kelowna.
           </p>
           <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-            <Link href="/events" className="bg-[var(--color-accent)] text-[#1a1400] font-semibold py-2 px-6 rounded-full hover:brightness-110 transition">
+            <Link href="/events" className="bg-[var(--color-accent)] text-[#1a0512] font-semibold py-2 px-6 rounded-full hover:brightness-110 transition">
               View Events
             </Link>
             <a

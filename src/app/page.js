@@ -45,7 +45,7 @@ export default function Home() {
           </div>
           <Link
             href="/events"
-            className="inline-block mt-14 px-6 py-2 rounded-full bg-[var(--color-accent)] text-[#1a1400] font-semibold hover:brightness-110 transition"
+            className="inline-block mt-14 px-6 py-2 rounded-full bg-[var(--color-accent)] text-[#1a0512] font-semibold hover:brightness-110 transition"
           >
             View All Events
           </Link>
