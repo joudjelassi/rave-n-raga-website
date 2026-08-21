@@ -11,30 +11,26 @@ export default function EventCard({ event }) {
           <img
             src={event.image}
             alt={`${event.title} poster`}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
-              event.isPast ? 'grayscale' : ''
-            }`}
+            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
           />
           <img
             src={event.altImage}
             alt={`${event.title} alternate poster`}
-            className={`absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
-              event.isPast ? 'grayscale' : ''
-            }`}
+            className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
           />
         </div>
       ) : (
         <img
           src={event.image}
           alt={`${event.title} poster`}
-          className={`w-full h-120 object-cover ${event.isPast ? 'grayscale' : ''}`}
+          className="w-full h-120 object-cover"
         />
       )}
 
       {/* Info Box */}
       <div className="p-5 text-left flex flex-col justify-between h-full">
         <h3 className="font-display text-xl font-semibold text-white mb-2">{event.title}</h3>
-        <p className="text-sm text-indigo-300 mb-4">{event.description}</p>
+        {!event.isPast && <p className="text-sm text-indigo-300 mb-4">{event.description}</p>}
 
         {/* Location */}
         <div className="flex items-center text-sm text-[#AAAAFF] mb-2 gap-2">
