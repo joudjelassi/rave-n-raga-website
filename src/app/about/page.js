@@ -85,7 +85,7 @@ export default function AboutPage() {
               <div className="absolute -top-6 -right-6 bg-indigo-500/20 w-24 h-24 rounded-full blur-2xl group-hover:scale-110 transition-transform duration-300"></div>
               <div className="relative z-10 text-left">
                 <h3 className="font-display text-xl font-semibold mb-2 text-white">Follow us on Instagram</h3>
-                <p className="text-sm text-indigo-300 mb-6">Stay updated with event teasers, aftermovies, and behind-the-scenes moments.</p>
+                <p className="text-sm text-indigo-300 mb-6">Stay updated with event teasers, posters, behind-the-scenes moments, and more.</p>
                 <a
                   href="https://www.instagram.com/rave.n.raga"
                   target="_blank"
