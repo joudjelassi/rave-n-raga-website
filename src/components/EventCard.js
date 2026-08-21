@@ -1,4 +1,9 @@
+'use client';
+import { useState } from 'react';
+
 export default function EventCard({ event }) {
+  const [showAlt, setShowAlt] = useState(false);
+
   return (
     <div
       className={`group flex flex-col bg-[#1f1f2f] rounded-2xl overflow-hidden shadow-lg transition transform hover:scale-105 hover:shadow-[0_10px_40px_-10px_var(--color-accent)] ${
@@ -7,7 +12,10 @@ export default function EventCard({ event }) {
     >
       {/* Event Poster */}
       {event.altImage ? (
-        <div className="relative w-full h-120">
+        <div
+          className="relative w-full h-120 cursor-pointer"
+          onClick={() => setShowAlt((prev) => !prev)}
+        >
           <img
             src={event.image}
             alt={`${event.title} poster`}
@@ -20,7 +28,9 @@ export default function EventCard({ event }) {
             alt={`${event.title} alternate poster`}
             loading="lazy"
             decoding="async"
-            className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+              showAlt ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+            }`}
           />
         </div>
       ) : (
