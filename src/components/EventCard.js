@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 export default function EventCard({ event }) {
@@ -73,9 +74,18 @@ export default function EventCard({ event }) {
 
         {/* Action */}
         {event.isPast ? (
-          <div className="w-full mt-auto px-5 py-2 rounded-full border border-white/30 text-white/60 text-center font-medium">
-            Past Event
-          </div>
+          event.recapSlug ? (
+            <Link
+              href={`/events/${event.recapSlug}`}
+              className="w-full block mt-auto px-5 py-2 rounded-full bg-[var(--color-accent)] text-white font-medium text-center hover:brightness-110 transition"
+            >
+              Event Recap
+            </Link>
+          ) : (
+            <div className="w-full mt-auto px-5 py-2 rounded-full border border-white/30 text-white/60 text-center font-medium">
+              Past Event
+            </div>
+          )
         ) : event.ticketLink ? (
           <a
             href={event.ticketLink}

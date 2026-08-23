@@ -34,6 +34,7 @@ export const pastEvents = [
     image: '/posters/rhythmroom6.png',
     altImage: '/posters/rhythmroom6-alternate.png',
     isPast: true,
+    recapSlug: 'rhythm-room-vol-6',
   },
   {
     title: 'Rhythm Room: Vol. 5.0 — Mystic Jungle',
