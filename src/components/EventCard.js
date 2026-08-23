@@ -87,7 +87,7 @@ export default function EventCard({ event }) {
           </a>
         ) : event.isFreeEntry ? (
           <div className="w-full mt-auto px-5 py-2 rounded-full border border-white text-white text-center font-medium opacity-80">
-            No Cover
+            Free Entry
           </div>
         ) : (
           <div className="w-full mt-auto px-5 py-2 rounded-full border border-white text-white text-center font-medium opacity-80">

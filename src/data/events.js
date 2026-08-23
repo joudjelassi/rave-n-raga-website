@@ -1,6 +1,6 @@
 export const upcomingEvents = [
   {
-    title: 'Night Market',
+    title: 'Social Night — Night Market',
     date: 'August 28th, 6–11PM',
     location: 'Unleashed Brewing',
     description: 'A night market featuring local vendors and DJs — shop, sip, and vibe with the community.',
@@ -20,7 +20,7 @@ export const upcomingEvents = [
 
 export const pastEvents = [
   {
-    title: 'Gallery Exhibition',
+    title: 'Social Night — Gallery Exhibition',
     date: 'August 14th, 2026',
     location: 'Unleashed Brewing',
     image: '/posters/artnight_august.png',
