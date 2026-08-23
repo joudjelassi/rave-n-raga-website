@@ -11,12 +11,6 @@ const fadeUp = {
   viewport: { once: true },
 };
 
-const sizeClasses = {
-  big: 'col-span-2 row-span-2 sm:col-span-4 sm:row-span-3',
-  small: 'col-span-1 row-span-1 sm:col-span-2 sm:row-span-2',
-  wide: 'col-span-2 row-span-2 sm:col-span-3',
-};
-
 export default function EventRecap({ recap }) {
   const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] });
@@ -160,14 +154,14 @@ export default function EventRecap({ recap }) {
           <span className="text-xs tracking-[0.18em] uppercase text-indigo-300">Shot by {recap.photographers.join(' & ')}</span>
           <h2 className="font-display font-bold text-2xl md:text-3xl mt-2">The Night in Photos</h2>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-6 auto-rows-[110px] sm:auto-rows-[130px] gap-3">
+        <div className="columns-2 sm:columns-3 lg:columns-4 gap-3">
           {recap.photos.map((photo, i) => (
-            <div key={i} className={`relative rounded-xl overflow-hidden ${sizeClasses[photo.size] || 'col-span-2 row-span-2'}`}>
+            <div key={i} className="relative mb-3 break-inside-avoid rounded-xl overflow-hidden">
               <img
                 src={photo.src}
                 alt=""
                 loading="lazy"
-                className="w-full h-full object-cover cursor-pointer"
+                className="w-full block object-cover cursor-pointer"
                 onClick={() => setLightboxImage(photo.src)}
               />
               {photo.credit && (
@@ -188,12 +182,14 @@ export default function EventRecap({ recap }) {
         <p className="text-indigo-300 text-sm mb-7">All photos © {recap.photographers.join(' & ')}</p>
         <h3 className="font-display font-semibold text-2xl mb-6">Want the full album?</h3>
         <div className="flex flex-wrap gap-3 justify-center">
-          <Link
+          <a
             href={recap.galleryLink || '/gallery'}
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-6 py-2 rounded-full bg-[var(--color-accent)] text-white font-semibold hover:brightness-110 transition"
           >
             View Full Gallery
-          </Link>
+          </a>
           <Link
             href="/events"
             className="px-6 py-2 rounded-full border border-white text-white font-medium hover:bg-white hover:text-black transition"
