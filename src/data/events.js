@@ -1,5 +1,13 @@
 export const upcomingEvents = [
   {
+    title: 'Night Market',
+    date: 'August 28th, 6–11PM',
+    location: 'Unleashed Brewing',
+    description: 'A night market featuring local vendors and DJs — shop, sip, and vibe with the community.',
+    image: '/posters/nightmarket_august.png',
+    isFreeEntry: true,
+  },
+  {
     title: 'Rhythm Room: Vol. 7.0 — Sands of Sound',
     date: 'August 29th, 2026',
     location: 'Sixteen15 Venues',
