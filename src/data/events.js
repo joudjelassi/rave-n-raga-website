@@ -1,11 +1,27 @@
 export const upcomingEvents = [
   {
-    title: 'Social Night — Night Market',
-    date: 'August 28th, 6–11PM',
+    title: 'Rave N Raga: 1 Year Anniversary',
+    date: 'September 25th, 6PM–12AM',
+    location: 'Unleashed Brewing, 880 Clement Ave',
+    description: 'Celebrating one year of Rave N Raga with sets from Jorb.co, Psychic.Porridge, Micahmakeemtalk, and Vanderkam.',
+    image: '/posters/1-year-anniversary.jpg',
+  },
+];
+
+export const pastEvents = [
+  {
+    title: 'Social Night — Art Expo',
+    date: 'September 11th, 2026',
     location: 'Unleashed Brewing',
-    description: 'A night market featuring local vendors and DJs — shop, sip, and vibe with the community.',
-    image: '/posters/nightmarket_august.png',
-    isFreeEntry: true,
+    image: '/posters/artnight_september.png',
+    isPast: true,
+  },
+  {
+    title: 'Social Night — Night Market',
+    date: 'September 4th, 2026',
+    location: 'Unleashed Brewing',
+    image: '/posters/nightmarket_september.jpg',
+    isPast: true,
   },
   {
     title: 'Rhythm Room: Vol. 7.0 — Sands of Sound',
@@ -14,11 +30,15 @@ export const upcomingEvents = [
     description: 'A desert-born night of shifting rhythms and golden dunes — Sands of Sound turns the dance floor into a mirage of sound and movement.',
     image: '/posters/rhythmroom7.PNG',
     altImage: '/posters/rhythmroom7-alternate.png',
-    ticketLink: 'https://square.link/u/WOoGJpbF?src=sheet',
+    isPast: true,
   },
-];
-
-export const pastEvents = [
+  {
+    title: 'Social Night — Night Market',
+    date: 'August 28th, 2026',
+    location: 'Unleashed Brewing',
+    image: '/posters/nightmarket_august.png',
+    isPast: true,
+  },
   {
     title: 'Social Night — Gallery Exhibition',
     date: 'August 14th, 2026',
