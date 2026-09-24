@@ -5,6 +5,7 @@ export const upcomingEvents = [
     location: 'Unleashed Brewing, 880 Clement Ave',
     description: 'Celebrating one year of Rave N Raga with sets from Jorb.co, Psychic.Porridge, Micahmakeemtalk, and Vanderkam.',
     image: '/posters/1-year-anniversary.jpg',
+    ticketLink: 'https://checkout.square.site/merchant/MLPYMWYEVZT86/checkout/4FJZXZCI475SN7WIXLXLKGWQ',
   },
 ];
 
