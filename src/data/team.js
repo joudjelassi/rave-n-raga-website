@@ -1,5 +1,5 @@
 export const team = [
-  { name: 'Aryan Prasad Dhawan', role: 'Co-Founder' },
+  { name: 'Aryan Prasad Dhawan (Asura)', role: 'Co-Founder' },
   { name: 'Joud Jelassi', role: 'Co-Founder' },
   { name: 'Zoe Turcotte (Maldor the Visual)', role: 'Creative Director' },
   { name: 'Jordan Collins (jorb.co)', role: 'Talent Manager / Resident DJ' },
