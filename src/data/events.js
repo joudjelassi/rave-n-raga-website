@@ -4,7 +4,7 @@ export const upcomingEvents = [
     date: 'October 31st, 9:30PM–Late',
     location: 'Sixteen15 Venues, 1615 Pandosy St',
     description: 'A 19+ Halloween house & techno rave with sets from Jorb.co, Mario DV, and Spānda.',
-    image: '/posters/rhythmroom8.png',
+    image: '/posters/rhythmroom8.jpg',
     altImage: '/posters/rhythmroom8-alternate.jpg',
     ticketLink: 'https://checkout.square.site/merchant/MLPYMWYEVZT86/checkout/J6QEZMYWE6ZATOCP5OWXJPY2',
   },
