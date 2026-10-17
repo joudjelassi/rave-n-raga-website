@@ -1,15 +1,24 @@
 export const upcomingEvents = [
   {
-    title: 'Rave N Raga: 1 Year Anniversary',
-    date: 'September 25th, 6PM–12AM',
-    location: 'Unleashed Brewing, 880 Clement Ave',
-    description: 'Celebrating one year of Rave N Raga with sets from Jorb.co, Psychic.Porridge, Micahmakeemtalk, and Vanderkam.',
-    image: '/posters/1-year-anniversary.jpg',
-    ticketLink: 'https://checkout.square.site/merchant/MLPYMWYEVZT86/checkout/4FJZXZCI475SN7WIXLXLKGWQ',
+    title: 'Rhythm Room: Vol. 8.0 — A Maldor Halloween',
+    date: 'October 31st, 9:30PM–Late',
+    location: 'Sixteen15 Venues, 1615 Pandosy St',
+    description: 'A 19+ Halloween house & techno rave with sets from Jorb.co, Mario DV, and Spānda.',
+    image: '/posters/rhythmroom8.png',
+    altImage: '/posters/rhythmroom8-alternate.jpg',
+    ticketLink: 'https://checkout.square.site/merchant/MLPYMWYEVZT86/checkout/J6QEZMYWE6ZATOCP5OWXJPY2',
   },
 ];
 
 export const pastEvents = [
+  {
+    title: 'Rave N Raga: 1 Year Anniversary',
+    date: 'September 25th, 2026',
+    location: 'Unleashed Brewing, 880 Clement Ave',
+    description: 'Celebrating one year of Rave N Raga with sets from Jorb.co, Psychic.Porridge, Micahmakeemtalk, and Vanderkam.',
+    image: '/posters/1-year-anniversary.jpg',
+    isPast: true,
+  },
   {
     title: 'Social Night — Art Expo',
     date: 'September 11th, 2026',
